@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "Url": "https://localhost:7046/",
+    "AuthenticationEndpoint": "Authentication",
+    "DeauthenticationEndpoint": "Deauthentication",
+    "DatabaseBackupEndpoint": "Data/Backup",
+    "User": "sbapi_utility",
+    "Secret": "9698204f6cf936d25ece9592d178f008"
+  }
+}

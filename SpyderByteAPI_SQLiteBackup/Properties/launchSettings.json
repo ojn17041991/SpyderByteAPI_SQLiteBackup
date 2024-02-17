@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "SpyderByteAPI_SQLiteBackup": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7025",
+      "launchBrowser": false
+    }
+  }
+}

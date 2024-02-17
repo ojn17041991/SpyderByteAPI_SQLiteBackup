@@ -1,0 +1,10 @@
+{
+  "description": {
+    "language": "dotnet-isolated",
+    "extensions": [ ".dll" ],
+    "defaultExecutablePath": "dotnet",
+    "defaultWorkerPath": "SpyderByteAPI_SQLiteBackup.dll",
+    "workerIndexing": "true",
+    "canUsePlaceholder": true
+  }
+}
