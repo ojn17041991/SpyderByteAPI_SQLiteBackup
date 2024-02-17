@@ -1,12 +1,8 @@
 ﻿using SpyderByteAPI_SQLiteBackup.Services.Abstract;
-using System.Net.Http;
-using System;
-using System.Text.Json.Nodes;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using System.Text;
 using System.Net.Http.Headers;
-using System.Net.NetworkInformation;
 
 namespace SpyderByteAPI_SQLiteBackup.Services
 {
@@ -37,7 +33,7 @@ namespace SpyderByteAPI_SQLiteBackup.Services
 
         public async Task<bool> RequestBackup()
         {
-            _logger.LogInformation($"Database backup requested using (UserName={_user},Secret=xxxxxx,Url={_url},AuthenticationEndpoint={_authenticationEndpoint},DatabaseBackup={_databaseBackupEndpoint}).");
+            _logger.LogInformation($"Database backup requested using (UserName={_user},Secret=xxxxxx,Url={_url},AuthenticationEndpoint={_authenticationEndpoint},DatabaseBackupEndpoint={_databaseBackupEndpoint}).");
 
             try
             {
@@ -104,6 +100,7 @@ namespace SpyderByteAPI_SQLiteBackup.Services
                 return false;
             }
 
+            _token = string.Empty;
             return true;
         }
     }

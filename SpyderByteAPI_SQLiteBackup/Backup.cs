@@ -16,17 +16,17 @@ namespace SpyderByteAPI_SQLiteBackup
         }
 
         [Function("Backup")]
-        public async Task Run([TimerTrigger("0 5 * * * *")] TimerInfo timer)
+        public async Task Run([TimerTrigger("0 0 0 1 * *")] TimerInfo timer)
         {
             _logger.LogInformation($"Database Backup requested at {DateTime.Now.ToString("yyyy-MM-ddThh:mm:ss.fffZ")}.");
 
             if (await _httpService.RequestBackup())
             {
-                _logger.LogInformation($"Database Backup successful.");
+                _logger.LogInformation($"Database Backup Function App completed successful.");
             }
             else
             {
-                _logger.LogInformation($"Database Backup failed.");
+                _logger.LogInformation($"Database Backup Function App failed to complete.");
             }
 
             if (timer.ScheduleStatus is not null)

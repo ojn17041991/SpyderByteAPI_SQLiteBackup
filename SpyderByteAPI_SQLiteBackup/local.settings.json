@@ -6,6 +6,7 @@
     "Url": "https://spyderbyteapi-appservice.azurewebsites.net/",
     "AuthenticationEndpoint": "Authentication",
     "DatabaseBackupEndpoint": "Data/Backup",
-    "User": "sbapi_utility"
+    "User": "sbapi_utility",
+    "Secret": "xxxxxx"
   }
 }
