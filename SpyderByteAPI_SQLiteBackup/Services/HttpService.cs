@@ -43,7 +43,7 @@ namespace SpyderByteAPI_SQLiteBackup.Services
                     var credentials = new Dictionary<string, string>
                     {
                         { "userName", _user },
-                        { "secret", _secret }
+                        { "password", _secret }
                     };
                     var credentialsJson = JsonSerializer.Serialize(credentials);
                     var credentialsContent = new StringContent(credentialsJson, Encoding.UTF8, "application/json");
