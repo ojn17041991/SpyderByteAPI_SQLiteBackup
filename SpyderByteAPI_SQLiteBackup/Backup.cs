@@ -16,7 +16,7 @@ namespace SpyderByteAPI_SQLiteBackup
         }
 
         [Function("Backup")]
-        public async Task Run([TimerTrigger("0 0 0 1 * *")] TimerInfo timer)
+        public async Task Run([TimerTrigger("0 0 0 1 * *", RunOnStartup = true)] TimerInfo timer)
         {
             _logger.LogInformation($"Database Backup requested at {DateTime.Now.ToString("yyyy-MM-ddThh:mm:ss.fffZ")}.");
 

@@ -96,7 +96,7 @@ namespace SpyderByteAPI_SQLiteBackup.Services
             }
             catch (HttpRequestException hre)
             {
-                _logger.LogError("Failed to connect to API.", hre);
+                _logger.LogError(hre, "Failed to connect to API.");
                 return false;
             }
 
