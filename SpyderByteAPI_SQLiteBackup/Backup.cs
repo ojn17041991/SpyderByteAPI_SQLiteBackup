@@ -7,20 +7,22 @@ namespace SpyderByteAPI_SQLiteBackup
     public class Backup
     {
         private readonly ILogger _logger;
-        private readonly IHttpService _httpService;
+        private readonly IDataService _dataService;
 
-        public Backup(ILoggerFactory loggerFactory, IHttpService httpService)
+        public Backup(ILoggerFactory loggerFactory, IDataService dataService)
         {
             _logger = loggerFactory.CreateLogger<Backup>();
-            _httpService = httpService;
+            _dataService = dataService;
         }
 
         [Function("Backup")]
-        public async Task Run([TimerTrigger("0 0 0 1 * *", RunOnStartup = true)] TimerInfo timer)
+        public async Task RunBackup([TimerTrigger("0 0 0 1 * *", RunOnStartup = true)] TimerInfo timer)
         {
+            return;
+
             _logger.LogInformation($"Database Backup requested at {DateTime.Now.ToString("yyyy-MM-ddThh:mm:ss.fffZ")}.");
 
-            if (await _httpService.RequestBackup())
+            if (await _dataService.RequestBackup())
             {
                 _logger.LogInformation($"Database Backup Function App completed successful.");
             }
