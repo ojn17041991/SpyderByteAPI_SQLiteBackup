@@ -24,7 +24,8 @@ var host = new HostBuilder()
                 options.Rules.Remove(filterRule);
             }
         });
-        services.AddScoped<IHttpService, HttpService>();
+        services.AddScoped<IAuthenticationService, AuthenticationService>();
+        services.AddScoped<IDataService, DataService>();
         services.AddHttpClient();
     })
     .Build();
