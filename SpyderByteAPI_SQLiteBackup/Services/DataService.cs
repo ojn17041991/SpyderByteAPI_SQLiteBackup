@@ -89,7 +89,7 @@ namespace SpyderByteAPI_SQLiteBackup.Services
                     httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                     // Make request for DB cleanup.
-                    var databaseCleanupResponse = await httpClient.DeleteAsync(_url + _databaseCleanupEndpoint);
+                    var databaseCleanupResponse = await httpClient.PostAsync(_url + _databaseCleanupEndpoint, null);
                     if (databaseCleanupResponse.IsSuccessStatusCode)
                     {
                         _logger.LogInformation("Database cleanup request successful.");
